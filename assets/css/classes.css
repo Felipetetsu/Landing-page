@@ -1,0 +1,24 @@
+.svg-bg {
+  background-image: url('../img/main-bg.svg');
+  background-size: cover;
+}
+
+.primary-bg {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
+
+.white-bg {
+  background-color: var(--white-color);
+  color: var(--primary-color);
+}
+
+.section-content {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
+.section {
+  min-height: 100vh;
+}

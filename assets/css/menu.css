@@ -1,0 +1,147 @@
+.top-menu-space {
+  height: 6rem;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--white-color);
+  border-bottom: solid 0.1rem var(--light-gray-color);
+  z-index: 2;
+}
+
+.menu div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--primary-color);
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
+.logo {
+  font-size: var(--font-normal);
+  text-transform: uppercase;
+}
+
+.logo a {
+  color: inherit;
+}
+
+.menu-list ul {
+  list-style: none;
+  display: flex;
+  font-size: var(--font-small);
+}
+
+.menu-list ul li a {
+  color: inherit;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  height: 6rem;
+  position: relative;
+}
+
+.menu-list ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: 1.5rem;
+  left: 25%;
+  width: 50%;
+  height: 0.2rem;
+  background-color: transparent;
+  transition: all 250ms ease-in-out;
+}
+
+.menu-list ul li a:hover::after {
+  background-color: var(--primary-color);
+}
+
+.close-menu, .close-menu-label::after {
+  display: none;
+}
+
+.back-to-top a{
+  position: fixed;
+  display: flex;
+  bottom: 2rem;
+  right: 2rem;
+  width: 5rem;
+  height: 5rem;
+  background-color: var(--white-color);
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-90deg);
+  font-size: 3rem;
+  color: var(--primary-color);
+  border: 0.1rem solid var(--primary-color);
+  opacity: 0.5;
+}
+
+@media (max-width: 850px) {
+  .menu {
+    height: 100vh;
+    display: none;
+  }
+
+  .menu div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  .menu .logo {
+    font-size: 3rem;
+  }
+
+  .menu-list {
+    margin-top: 3rem;
+  }
+
+  .menu-list ul{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .top-menu-space {
+    display: none;
+  }
+
+  .close-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3; 
+  }
+  
+  .close-menu-label::after {
+    display: initial;
+    content: '☰';
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    font-size: 3rem;
+    width: 4rem;
+    height: 4rem;
+    text-align: center;
+    color: var(--white-color);
+    background-color: var(--primary-color);
+    cursor: pointer;
+    z-index: 3;
+  }
+
+  .close-menu:checked~.menu {
+    display: block;
+  }
+
+  .close-menu:checked~.close-menu-label::after {
+    content: '✕';
+  }
+}
